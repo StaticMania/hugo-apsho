@@ -1,0 +1,68 @@
+# MAIN base
+baseURL = "https://apsho-hugo.netlify.app/"
+languageCode = "en-us"
+title = "Apsho | App landing template"
+theme = "apsho"
+
+# Navigation Bar
+[[menu.main]]
+    name = "Home"
+    url = "#hero"
+    weight = 1
+[[menu.main]]
+    name = "About"
+    url = "#feature"
+    weight = 2
+[[menu.main]]
+    name = "Services"
+    url = "#faq"
+    weight = 3
+[[menu.main]]
+    name = "Blog"
+    url = "#blog"
+    weight = 4
+
+# Footer Sitemap
+[[menu.sitemap]]
+    name = "Home"
+    url = "#"
+    weight = 1
+[[menu.sitemap]]
+    name = "Latest Article"
+    url = "/blog"
+    weight = 2
+[[menu.sitemap]]
+    name = "Privacy & Policy"
+    url = "/privacy"
+    weight = 3
+[[menu.sitemap]]
+    name = "Contact"
+    url = "/contact"
+    weight = 4
+
+# Footer Address
+[params.address]
+address = "23 Khan Niketon, Grand Street, NYK."
+email = "apsho@example.com"
+phone = "+(448) 833 5272 332"
+
+# Footer Social
+[params.social]
+facebook = "https://www.facebook.com/pg/staticmania"
+twitter = "https://twitter.com/static_mania"
+github = "https://github.com/StaticMania"
+
+[params]
+
+# Header
+logo = "images/logo.png"
+formspreeURL = "https://formspree.io/mknyovwz"
+googleAnalytics = "UA-175025671-2"
+
+# Footer
+footerTitle = "Get the latest app updates"
+copyright1 = "All right reserved"
+copyright2 = "Copyright © Apsho {year}"
+
+#contact
+email = "help@staticmania.com"

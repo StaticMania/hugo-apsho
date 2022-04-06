@@ -1,0 +1,16 @@
+#  icons can be found on https://themify.me/themify-icons
+---
+enable: true
+title: You can benefit more than you think
+services:
+  - icon: ti-settings
+    title: No Setup
+    description: They generate alignment and engagement
+
+  - icon: ti-check-box
+    title: Free Trial
+    description: They generate alignment and engagement
+
+  - icon: ti-key
+    title: Quick Access
+    description: They generate alignment and engagement

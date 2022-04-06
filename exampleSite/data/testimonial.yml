@@ -1,0 +1,24 @@
+---
+enable: true
+title: What clients are say about this app
+description: The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.Error6251 is the best, Bawds jog, flick quartz, vex nymphs.
+comments:
+  - text: This is the best overall experience I have had with any template of any kind. Statimania made me feel like a valued customer and I feel empowered.
+    name: Juhair Islam
+    designation: Senior Developer
+    image: images/client/client-2.png
+
+  - text: Apsho was easy to set-up and more importantly, was dead simple to customize. Buy this on sight. Most worthy template I've ever buy
+    name: Jona Raisha
+    designation: UX Designer
+    image: images/client/client-1.png
+
+  - text: Best. customer. service. Seriously, I opened a ticket and they were so helpful and really seemed to care about my experience.
+    name: Xevier John
+    designation: CTO
+    image: images/client/client-3.png
+     
+  - text: We’ve used their templates before and have always been hugely satisfied - Stack is no exception
+    name: Kerri Reece
+    designation: Designer
+    image: images/client/client-1.png
