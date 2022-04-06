@@ -1,0 +1,106 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="footer-subscribe-title">
+          <h2>{{ .Site.Params.footerTitle }}</h2>
+        </div>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <form action="#" class="footer-subscribe-form">
+          <div class="from-group">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter Your E-mail">
+              <div class="subscribe">
+                <button class="btn btn-subscribe" type="submit">
+                  <span class="btn-area">
+                    Subscribe
+                  </span>
+                  <svg class="icon-left" xmlns="http://www.w3.org/2000/svg" width="16.317" height="15.323"
+                    viewBox="0 0 16.317 15.323">
+                    <g data-name="Group 1167">
+                      <g data-name="Group 1166">
+                        <path data-name="Path 1349"
+                          d="M.004 5.359a.7.7 0 00.587.693l6.091 1.609L.591 9.27a.7.7 0 00-.587.693v4.656a.7.7 0 00.206.5.726.726 0 00.119.1.7.7 0 00.675.044l14.911-6.958a.7.7 0 000-1.274L1.004.066a.7.7 0 00-1 .637zm13.952 2.3"
+                          fill="#fff" />
+                      </g>
+                    </g>
+                  </svg>
+                  <svg class="icon-center" xmlns="http://www.w3.org/2000/svg" width="16.317" height="15.323"
+                    viewBox="0 0 16.317 15.323">
+                    <g data-name="Group 1167">
+                      <g data-name="Group 1166">
+                        <path data-name="Path 1349"
+                          d="M.004 5.359a.7.7 0 00.587.693l6.091 1.609L.591 9.27a.7.7 0 00-.587.693v4.656a.7.7 0 00.206.5.726.726 0 00.119.1.7.7 0 00.675.044l14.911-6.958a.7.7 0 000-1.274L1.004.066a.7.7 0 00-1 .637zm13.952 2.3"
+                          fill="#fff" />
+                      </g>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
+        <div class="footer-description">
+          <img src="{{ .Site.Params.logo | absURL }}" alt="logo">
+          <p>
+            {{ .Site.Params.copyright1 }}
+              </br>
+              {{ replace .Site.Params.copyright2 "{year}" now.Year }}
+          </p>
+          <ul class="footer-description-social">
+            <li>
+              <a href="{{ .Site.Params.social.facebook }}"><i class="ti-facebook"></i></a>
+            </li>
+            <li>
+              <a href="{{ .Site.Params.social.twitter }}"><i class="ti-twitter-alt"></i></a>
+            </li>
+            <li>
+              <a href="{{ .Site.Params.social.github }}"><i class="ti-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <div class="footer-widget">
+          <h4>Sitemap</h4>
+          <div class="footer-widget-list">
+            <ul>
+              {{ $sitemap := .Site.Menus.sitemap }}
+                {{ range $sitemap }}
+                  <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <div class="footer-widget">
+          <h4>Address</h4>
+          {{ $address := .Site.Params.address }}
+          <div class="footer-widget-list">
+            <ul>
+              <li><a href="tel:{{ $address.phone }}"><i class="ti-mobile"></i>{{ $address.phone }}</a></li> 
+              <li><a href="mailto:{{ $address.email }}"><i class="ti-email"></i>{{ $address.email }}</a></li>
+              <li><p><i class="ti-pin"></i>{{ $address.address }}</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{{ $style := resources.Get "scss/non-critical.scss" | resources.ToCSS | minify }}
+<link href="{{ $style.Permalink }}" rel="stylesheet" />
+{{ $vendor := resources.Get "js/vendor.js" | minify }}
+<script src="{{ $vendor.Permalink }}"></script>
+{{ $formhandler := resources.Get "js/form-handler.js" | minify }}
+<script src="{{ $formhandler.Permalink }}"></script>
+{{ $script := resources.Get "js/script.js" | minify }}
+<script src="{{ $script.Permalink }}"></script>

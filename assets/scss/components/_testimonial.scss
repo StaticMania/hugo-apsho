@@ -1,0 +1,127 @@
+.testimonial {
+  padding: 50px 0px 100px;
+  overflow: hidden;
+  @include desktop {
+    padding-top: 100px;
+  }
+  @include tablet {
+    padding: 50px 0;
+  }
+
+  @include mobile-xs {
+    margin-top: 50px;
+  }
+
+  &-content {
+    @include desktop {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      margin-bottom: 25px;
+      font-size: 40px;
+
+      @include desktop {
+        font-size: 35px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    p {
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-slider {
+    @include desktop {
+      width: 80%;
+      margin: 0 auto;
+    }
+    @include tablet {
+      width: 95%;
+    }
+    @include mobile {
+      width: 100%;
+    }
+    &-item {
+      position: relative;
+      padding: 30px 40px;
+      background: $white;
+      border-radius: 10px;
+      margin: 0 50px;
+      outline: 0 !important;
+      transition: 0.5s ease;
+      @include desktop {
+        margin: 0 70px;
+      }
+      @include mobile {
+        padding: 20px;
+        margin: 0 50px;
+      }
+      p {
+        font-size: 14px;
+        color: $text-color-dark;
+      }
+    }
+
+    &-person {
+      display: flex;
+      align-items: center;
+      .thumb {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .content {
+        margin-left: 20px;
+
+        h3 {
+          font-size: 13px;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        p {
+          font-size: 12px;
+          margin: 0;
+        }
+      }
+    }
+
+    .slick-list {
+      padding: 0 100px;
+      margin: 0 -100px;
+    }
+  }
+
+  .testimonial-slider .slick-slide,
+  .testimonial-slider
+    .slick-slide[aria-hidden="true"]:not(.slick-cloned)
+    ~ .slick-cloned[aria-hidden="true"] {
+    transition: all 0.5s;
+    box-shadow: 20px 20px 50px rgba($color: #000000, $alpha: 0.03);
+    opacity: 0.5;
+  }
+
+  .testimonial-slider .slick-center,
+  .testimonial-slider
+    .slick-slide[aria-hidden="true"]:not([tabindex="-1"])
+    + .slick-cloned[aria-hidden="true"] {
+    transform: scale(1.3);
+    z-index: 1;
+    opacity: 1;
+    box-shadow: 20px 20px 50px rgba($color: #000000, $alpha: 0.05);
+  }
+}

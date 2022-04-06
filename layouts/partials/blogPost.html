@@ -1,0 +1,49 @@
+{{ with .Site.Data.homeblog }}
+  {{ if .enable }}
+    <section class="blog-post" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="section-title">
+              <h2>{{ .title }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          {{ range first 3 $.Site.RegularPages }}
+          <div class="col-lg-4 col-md-6">
+            <article class="blog-post-item">
+              <div class="blog-post-thumb">
+                <a href="{{ .Permalink }}">
+                  <img src="{{ .Params.featureImage }}" alt="post-thumb"
+                /></a>
+              </div>
+              <div class="blog-post-content">
+                <h2>
+                  <a href="{{ .Permalink }}"
+                    >{{ .Title }}</a
+                  >
+                </h2>
+                <div class="post-author">
+                  <div class="thumb">
+                    <img src="{{ .Params.authorThumb }}" alt="author-thumb" />
+                  </div>
+                  <div class="meta">
+                    <h3>{{ .Params.author }}</h3>
+                    <p>{{ .PublishDate.Format "January 2, 2006" }}</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          {{ end }}
+          <div class="see-all-post col-12">
+            <a href="{{ "blog" | absURL }}" data-text="{{ .blogButtonText }}" class="btn btn-primary">
+              <span>{{ .blogButtonText }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

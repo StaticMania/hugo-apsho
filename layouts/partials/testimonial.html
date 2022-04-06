@@ -1,0 +1,39 @@
+{{ with .Site.Data.testimonial }}
+  {{ if .enable }}
+    <section class="testimonial">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="testimonial-content">
+              <h2>
+                {{ .title }}
+              </h2>
+              <p>
+                {{ .description }}
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="testimonial-slider">
+              {{ $Section := .comments }}
+              {{ range $Section }}
+                <div class="testimonial-slider-item">
+                  <p>{{ .text }}</p>
+                  <div class="testimonial-slider-person">
+                    <div class="thumb">
+                      <img src={{ .image }} alt="person-thumb" />
+                    </div>
+                    <div class="content">
+                      <h3> {{ .name }} </h3>
+                      <p>{{ .designation }}</p>
+                    </div>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

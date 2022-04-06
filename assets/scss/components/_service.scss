@@ -1,0 +1,135 @@
+.service {
+  padding: 60px 0 80px;
+
+  @include mobile-xs {
+    padding-bottom: 0;
+  }
+  .col-md-6 {
+    &:nth-child(3n - 2) {
+      .service-item {
+        .service-icon {
+          svg {
+            path {
+              &:first-child {
+                fill: #ffecee;
+              }
+            }
+          }
+        }
+        &::after {
+          background: rgb(255, 187, 193);
+        }
+      }
+    }
+    &:nth-child(3n - 1) {
+      .service-item {
+        .service-icon {
+          svg {
+            path {
+              &:first-child {
+                fill: #e8f1ff;
+              }
+            }
+          }
+        }
+        &::after {
+          background: rgb(143, 186, 255);
+        }
+      }
+    }
+    &:nth-child(3n) {
+      .service-item {
+        .service-icon {
+          svg {
+            path {
+              &:first-child {
+                fill: #fff7d8;
+              }
+            }
+          }
+        }
+        &::after {
+          background: rgb(254, 231, 140);
+        }
+      }
+    }
+  }
+  &-item {
+    position: relative;
+    background: $white;
+    background: #fff;
+    box-shadow: 0px 20px 25px rgba(67, 103, 90, 0.1);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 25px 20px 40px;
+    transition: transform 0.3s $site-ease;
+    overflow: hidden;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      transform: scaleX(0);
+      transition: transform 0.5s $site-ease;
+      transform-origin: right;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+  &-icon {
+    position: relative;
+    width: 100%;
+    height: 145px;
+
+    svg {
+      position: absolute;
+      height: 100%;
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    i {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      color: $black;
+      display: inline-block;
+    }
+  }
+
+  &-content {
+    text-align: center;
+
+    img {
+      width: 45%;
+      padding-top: 20px;
+    }
+
+    h4 {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 0;
+    }
+  }
+}

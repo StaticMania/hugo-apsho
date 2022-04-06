@@ -1,0 +1,72 @@
+{{ define "main" }}
+
+<section class="page-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1>{{ .Title }}</h1>
+        <p>
+          {{ .Params.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      {{ range (.Paginator 6).Pages }}
+        <div class="col-lg-4 col-md-6">
+          <article class="blog-post-item">
+            <div class="blog-post-thumb">
+              <a href="{{ .Permalink }}">
+                <img src="{{ .Params.featureImage | absURL }}" alt="blog-thumb"
+              /></a>
+            </div>
+            <div class="blog-post-content">
+              <h2>
+                <a href="{{ .Permalink }}"
+                  >{{ .Title }}</a
+                >
+              </h2>
+              <div class="post-author">
+                <div class="thumb">
+                  <img src="{{ .Params.authorThumb | absURL }}" alt="author-thumb" />
+                </div>
+                <div class="meta">
+                  <h3>{{ .Params.author }}</h3>
+                  <p>{{ .PublishDate.Format "January 2, 2006" }}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      {{ end }}
+      <div class="col-lg-12">
+        <div class="blog-pagination">
+          <nav>
+            <!-- <ul class="pagination">
+              <li class="page-item active" aria-current="page">
+                <span class="page-link">
+                  1
+                  <span class="sr-only">(current)</span>
+                </span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">
+                  <i class="ti-angle-right"></i>
+                </a>
+              </li>
+            </ul> -->
+            {{ template "_internal/pagination.html" . }}
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

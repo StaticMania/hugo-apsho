@@ -1,0 +1,31 @@
+<head>
+  <meta charset="utf-8" />
+  <title>{{ .Title }}</title>
+
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  {{ "<!-- Themify -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ "themify/themify.css" | absURL }}">
+
+  {{ "<!-- Critical CSS -->" | safeHTML }}
+  {{ $stylex := resources.Get "scss/critical.scss" | resources.ToCSS | minify }}
+  <link href="{{ $stylex.Permalink }}" rel="stylesheet" />
+
+  {{ "<!--Favicon-->" | safeHTML }}
+  <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon" />
+  <link rel="icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon" />
+  {{ with site.Params.googleAnalytics }}
+  {{ "<!-- Google Analytics -->" | safeHTML }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ . }}');
+  </script>
+	{{ end }}
+</head>
