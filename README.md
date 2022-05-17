@@ -18,7 +18,7 @@ Checkout the live demo [here](https://apsho-hugo.staticmania.com/)
 
 ## Installation
 
-1. Add the repository into your Hugo Project repository as a submodule, `git submodule add git@github.com:StaticMania/apsho-hugo.git themes/apsho`.
+1. Add the repository into your Hugo Project repository as a submodule, `git submodule add git@github.com:StaticMania/hugo-apsho.git themes/apsho`.
 2. Copy the `.forestry`, `data`, `content`, `static`, `resources` & `config.toml` files from the `exampleSite` directory and paste it on you Hugo Project repository/directory. From the site home directory:
 
    cp -a themes/apsho/exampleSite/\* .
