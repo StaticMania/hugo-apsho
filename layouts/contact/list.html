@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <form id="contact-form" action="{{ .Site.Params.formspreeURL }}" method="POST" class="contact-form row">
+          <form id="contact-form" action="{{ .Site.Params.fabFormURL }}" method="POST" class="contact-form row">
             <div class="col-lg-6">
               <input
                 type="text"
@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="col-6 text-right">
-              <button id="contact-form-button" class="btn btn-primary-filled" type="submit">
+              <button id="contact-form-button" class="btn btn-primary-filled" type="submit" formtarget="_blank">
                 Submit
               </button>
             </div>
@@ -76,6 +76,9 @@
               <p id="contact-form-status" class="mt-3"></p>
             </div>
           </form>
+          <p class="contact-form-generator mt-3">
+            <strong>** </strong><a href="https://fabform.io/" target="_blank">Static website forms</a>
+          </p>
         </div>
       </div>
     </div>
