@@ -56,13 +56,13 @@ github = "https://github.com/StaticMania"
 
 # Header
 logo = "images/logo.png"
-formspreeURL = "https://formspree.io/mknyovwz"
+fabFormURL = "https://fabform.io/f/zWMBVeW"
 googleAnalytics = "UA-175025671-2"
 
 # Footer
 footerTitle = "Get the latest app updates"
 copyright1 = "All right reserved"
-copyright2 = "Copyright © Apsho {year}"
+copyright2 = "Copyright ©  <a href=\"https://staticmania.com/\" target=\"_blank\">StaticMania </a> {year}"
 
 #contact
 email = "help@staticmania.com"
