@@ -32,7 +32,7 @@ Checkout the live demo [here](https://apsho-hugo.staticmania.com/)
 - Blog Support.
 - Well formatted code.
 - Easy Customization.
-- Formspree Contact form.
+- FabForm.io [static website form](https://fabform.io).
 - Google Analytics.
 - Forestry Integrated.
 - Crafted for Personal Portfolio
