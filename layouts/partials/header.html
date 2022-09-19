@@ -1,10 +1,10 @@
 <nav class="main-nav navbar navbar-expand-lg">
   <div class="container-fluid">
     {{ "<!-- Logo -->" | safeHTML }}
-    <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+    <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
       <img
         class="logo-main"
-        src="{{ .Site.Params.logo | absURL }}"
+        src="{{ .Site.Home.RelPermalink }}{{ .Site.Params.logo }}"
         alt="logo-white"
       />
     </a>
@@ -26,13 +26,13 @@
       <ul class="navbar-nav ml-auto">
       {{ range $index, $element := $menu }}
         <li class="nav-item">
-          <a href="{{ $.Site.BaseURL }}{{ .URL }}" class="nav-link {{ if $.IsHome }}scroll{{ end }}">{{ .Name }}</a>
+          <a href="{{ $.Site.Home.RelPermalink }}{{ .URL }}" class="nav-link {{ if $.IsHome }}scroll{{ end }}">{{ .Name }}</a>
         </li>
       {{ end }}
       </ul>
       <div class="account-list list-inline">
         <li class="list-inline-item">
-          <a href="{{ "contact" | absURL }}" class="btn btn-sm btn-violate">
+          <a href="{{ $.Site.Home.RelPermalink }}{{ "contact" }}" class="btn btn-sm btn-violate">
             Get in touch
           </a>
         </li>

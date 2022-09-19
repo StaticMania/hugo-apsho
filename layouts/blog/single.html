@@ -10,7 +10,7 @@
         <div class="post-meta">
           <ul>
             <li>
-              <img src="{{ .Params.authorThumb | absURL }}" alt="author-thumb" />
+              <img src="{{ .Site.Home.RelPermalink }}{{ .Params.authorThumb }}" alt="author-thumb" />
             </li>
             <li>
               <h5>

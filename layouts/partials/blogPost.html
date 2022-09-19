@@ -14,19 +14,19 @@
           <div class="col-lg-4 col-md-6">
             <article class="blog-post-item">
               <div class="blog-post-thumb">
-                <a href="{{ .Permalink }}">
+                <a href="{{ .RelPermalink }}">
                   <img src="{{ .Params.featureImage }}" alt="post-thumb"
                 /></a>
               </div>
               <div class="blog-post-content">
                 <h2>
-                  <a href="{{ .Permalink }}"
+                  <a href="{{ .RelPermalink }}"
                     >{{ .Title }}</a
                   >
                 </h2>
                 <div class="post-author">
                   <div class="thumb">
-                    <img src="{{ .Params.authorThumb }}" alt="author-thumb" />
+                    <img src="{{ .Site.Home.RelPermalink }}{{ .Params.authorThumb }}" alt="author-thumb" />
                   </div>
                   <div class="meta">
                     <h3>{{ .Params.author }}</h3>
@@ -38,7 +38,7 @@
           </div>
           {{ end }}
           <div class="see-all-post col-12">
-            <a href="{{ "blog" | absURL }}" data-text="{{ .blogButtonText }}" class="btn btn-primary">
+            <a href="{{ "blog" }}" data-text="{{ .blogButtonText }}" class="btn btn-primary">
               <span>{{ .blogButtonText }}</span>
             </a>
           </div>
