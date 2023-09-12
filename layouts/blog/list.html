@@ -20,19 +20,19 @@
         <div class="col-lg-4 col-md-6">
           <article class="blog-post-item">
             <div class="blog-post-thumb">
-              <a href="{{ .Permalink }}">
-                <img src="{{ .Params.featureImage | absURL }}" alt="blog-thumb"
+              <a href="{{ .RelPermalink }}">
+                <img src="{{ .Site.Home.RelPermalink }}{{ .Params.featureImage }}" alt="blog-thumb"
               /></a>
             </div>
             <div class="blog-post-content">
               <h2>
-                <a href="{{ .Permalink }}"
+                <a href="{{ .RelPermalink }}"
                   >{{ .Title }}</a
                 >
               </h2>
               <div class="post-author">
                 <div class="thumb">
-                  <img src="{{ .Params.authorThumb | absURL }}" alt="author-thumb" />
+                  <img src="{{ .Site.Home.RelPermalink }}{{ .Params.authorThumb }}" alt="author-thumb" />
                 </div>
                 <div class="meta">
                   <h3>{{ .Params.author }}</h3>
